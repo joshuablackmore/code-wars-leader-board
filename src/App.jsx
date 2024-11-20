@@ -3,9 +3,9 @@ import Wars from "./components/Wars";
 
 function App() {
   return (
-    <>
+    <div>
       <Wars />
-    </>
+    </div>
   );
 }
 

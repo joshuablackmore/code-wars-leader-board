@@ -27,9 +27,19 @@ const Wars = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col gap-12 max-w-[800px]">
       {userData.length > 0
-        ? userData.map((user) => <WarCard username={user.username} />)
+        ? userData
+            .sort((a, b) => b.honor - a.honor)
+            .map((user, index) => (
+              <WarCard
+                index={index + 1}
+                username={user.username}
+                honor={user.honor}
+                kataComplete={user.codeChallenges.totalCompleted}
+                languages={Object.keys(user.ranks.languages).length}
+              />
+            ))
         : null}
     </div>
   );
