@@ -26,7 +26,7 @@ const WarCard = (props) => {
             <img
               src={props.image}
               alt="profile-picture"
-              className=" opacity-30"
+              className=" opacity-50"
             />
           </CardHeader>
           <CardBody className=" border border-slate-600 top-0 bottom-0 left-0 right-0 flex flex-col justify-around ">
@@ -39,13 +39,13 @@ const WarCard = (props) => {
             </Typography>
             <div className="flex flex-col  h-48 justify-around">
               <Typography color="blue-gray" className="text-2xl" textGradient>
-                🏅 Total Honor:{props.honor}
+                🏅 Total Honor: {props.honor}
               </Typography>
               <Typography color="blue-gray" className="font-large" textGradient>
-                ✅ Kata Completed:{props.kataComplete}
+                ✅ Kata Completed: {props.kataComplete}
               </Typography>
               <Typography color="blue-gray" className="font-large" textGradient>
-                💻 Languages:{props.languages}
+                💻 Languages: {props.languages}
               </Typography>
             </div>
           </CardBody>
