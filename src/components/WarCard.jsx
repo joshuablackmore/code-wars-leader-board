@@ -12,7 +12,10 @@ const WarCard = (props) => {
   return (
     <div className="h-[400px]">
       {props.index === 1 ? (
-        <h1 className=" font-extrabold   text-2xl text-start ">Leader!!!</h1>
+        <h1 className=" font-extrabold   text-2xl text-start ">
+          {" "}
+          🏆 Leader!!!
+        </h1>
       ) : (
         <h1 className="font-bold text-start ">Possition: {props.index}</h1>
       )}
@@ -36,13 +39,16 @@ const WarCard = (props) => {
             </Typography>
             <div className="flex flex-col  h-48 justify-around">
               <Typography color="blue-gray" className="text-2xl" textGradient>
-                Total Honor: {props.honor}
+                🏅 Total Honor:{" "}
+                <span className="text-green-400">{props.honor}</span>
               </Typography>
               <Typography color="blue-gray" className="font-large" textGradient>
-                Kata Complete: {props.kataComplete}
+                ✅ Kata Completed:{" "}
+                <span className="text-yellow-400">{props.kataComplete}</span>
               </Typography>
               <Typography color="blue-gray" className="font-large" textGradient>
-                Languages: {props.languages}
+                💻 Languages:{" "}
+                <span className="text-blue-400">{props.languages}</span>
               </Typography>
             </div>
           </CardBody>
