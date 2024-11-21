@@ -33,7 +33,7 @@ const Wars = () => {
   };
 
   return (
-    <div className=" lg:grid lg:grid-flow-row lg:grid-cols-2 lg:grid-rows-2  gap-24">
+    <div className="lg:grid lg:grid-flow-row lg:grid-cols-2 lg:grid-rows-2 gap-24 ">
       {userData.length > 0
         ? userData
             .sort((a, b) => b.honor - a.honor)
