@@ -4,10 +4,11 @@ import WarCard from "./WarCard";
 const Wars = () => {
   const [userData, setUserData] = useState([]);
   const userImages = {
-    SquashB: "src/images/SquashB.png",
-    "K-B13": "src/images/Cezary.png",
+    SquashB: "https://ca.slack-edge.com/T03ALA7H4-U07MNHU3EBA-ebcc8c645459-512",
+    "K-B13": "https://ca.slack-edge.com/T03ALA7H4-U07LWTPJK37-3714da68ba5d-512",
     kelly: "src/images/Kelly.png",
-    jamiepod: "src/images/Jamie.png",
+    jamiepod:
+      "https://ca.slack-edge.com/T03ALA7H4-U07MNHVHJ72-54662f731372-512",
   };
 
   useEffect(() => {
