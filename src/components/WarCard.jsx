@@ -1,28 +1,54 @@
 import React from "react";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Tooltip,
+} from "@material-tailwind/react";
 
 const WarCard = (props) => {
   return (
-    <>
+    <div className="h-[400px]">
       {props.index === 1 ? (
-        <h1 className=" font-extrabold decoration-slate-300 underline text-start ml-2 mt-2">
-          Winner!!
-        </h1>
+        <h1 className=" font-extrabold   text-2xl text-start ">Leader!!!</h1>
       ) : (
-        <h1 className="font-bold text-start ml-2 mt-2">
-          Possition: {props.index}
-        </h1>
+        <h1 className="font-bold text-start ">Possition: {props.index}</h1>
       )}
-      <div className="bg-slate-700/50 h-52 border border-black rounded-lg p-4 m-2 flex flex-col">
-        <h1 className="text-3xl font-bold underline text-orange-600 justify-self-start">
-          {props.username}
-        </h1>
-        <div className="mt-10 flex flex-col justify-center border border-white/20 rounded-lg items-center leading-8">
-          <h3>Honor : {props.honor}</h3>
-          <h3>Total Kata Complete: {props.kataComplete}</h3>
-          <h3>Total Languages Trained: {props.languages}</h3>
-        </div>
+
+      <div className="flex justify-center items-center  h-[350px] mt-12">
+        <Card className="w-96  bg-[rgb(49,51,56)] ">
+          <CardHeader floated={false} className="bg-[rgb(49,51,56)]">
+            <img
+              src={props.image}
+              alt="profile-picture"
+              className=" opacity-30"
+            />
+          </CardHeader>
+          <CardBody className="absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-around ">
+            <Typography
+              variant="h4"
+              color="blue-gray"
+              className="mb-2 font-extrabold text-3xl"
+            >
+              {props.username}
+            </Typography>
+            <div className="flex flex-col  h-48 justify-around">
+              <Typography color="blue-gray" className="text-2xl" textGradient>
+                Total Honor: {props.honor}
+              </Typography>
+              <Typography color="blue-gray" className="font-large" textGradient>
+                Kata Complete: {props.kataComplete}
+              </Typography>
+              <Typography color="blue-gray" className="font-large" textGradient>
+                Languages: {props.languages}
+              </Typography>
+            </div>
+          </CardBody>
+        </Card>
       </div>
-    </>
+    </div>
   );
 };
 

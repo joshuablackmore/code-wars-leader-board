@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from "react";
 import WarCard from "./WarCard";
+import "./Wars.css";
 
 const Wars = () => {
   const [userData, setUserData] = useState([]);
+  const userImages = {
+    SquashB: "src/images/SquashB.png",
+    "K-B13": "src/images/Cezary.png",
+    kelly: "src/images/Kelly.png",
+    jamiepod: "src/images/Jamie.png",
+  };
 
   useEffect(() => {
     setTimeout(getStats, 1000);
   }, []);
 
-  const users = ["SquashB", "cezary", "john"];
+  const users = ["SquashB", "K-B13", "jamiepod"];
 
   const getStats = async () => {
     try {
@@ -27,7 +34,7 @@ const Wars = () => {
   };
 
   return (
-    <div className="flex flex-col gap-12 max-w-[800px]">
+    <div className="grid grid-flow-row grid-cols-2 grid-rows-2 gap-24">
       {userData.length > 0
         ? userData
             .sort((a, b) => b.honor - a.honor)
@@ -38,6 +45,7 @@ const Wars = () => {
                 honor={user.honor}
                 kataComplete={user.codeChallenges.totalCompleted}
                 languages={Object.keys(user.ranks.languages).length}
+                image={userImages[user.username]}
               />
             ))
         : null}
