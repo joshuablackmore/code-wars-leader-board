@@ -9,4 +9,4 @@ describe("App", () => {
       "CtM Code Wars Leader Board"
     );
   });
-});
+});q

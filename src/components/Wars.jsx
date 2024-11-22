@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import WarCard from "./WarCard";
+import WarCardSkeleton from "./WarCardSkeleton";
 
 const Wars = () => {
   const [userData, setUserData] = useState([]);
+  const [testLoader, setTestLoader] = useState(["one", "two", "three", "four"]);
   const userImages = {
     SquashB: "https://ca.slack-edge.com/T03ALA7H4-U07MNHU3EBA-ebcc8c645459-512",
     "K-B13": "https://ca.slack-edge.com/T03ALA7H4-U07LWTPJK37-3714da68ba5d-512",
-    kelly: "src/images/Kelly.png",
+    KelH: "https://ca.slack-edge.com/T03ALA7H4-U07M28Z6QJ0-ebe860184e73-512",
     jamiepod:
       "https://ca.slack-edge.com/T03ALA7H4-U07MNHVHJ72-54662f731372-512",
   };
@@ -15,7 +17,7 @@ const Wars = () => {
     setTimeout(getStats, 1000);
   }, []);
 
-  const users = ["SquashB", "K-B13", "jamiepod"];
+  const users = ["SquashB", "K-B13", "jamiepod", "KelH"];
 
   const getStats = async () => {
     try {
@@ -48,7 +50,7 @@ const Wars = () => {
                 image={userImages[user.username]}
               />
             ))
-        : null}
+        : testLoader.map((user) => <WarCardSkeleton />)}
     </div>
   );
 };
